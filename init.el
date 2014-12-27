@@ -225,3 +225,12 @@
   (load custom-file))
 
 (message "\n\n Pack loading completed. Your Emacs is Live...\n\n")
+
+;; TODO: move it somewhere else
+;; ------------------------ CUSTOMS
+
+(setq sentence-end-double-space 'nil)
+(put 'upcase-region 'disabled nil)
+
+(add-to-list 'default-frame-alist
+                       '(font . "DejaVu Sans Mono-9"))
