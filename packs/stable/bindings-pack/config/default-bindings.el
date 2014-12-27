@@ -17,7 +17,6 @@
 ;;s - show popupwindows
 ;;w - window and buffer shortcuts
 
-(global-set-key (kbd "M-x") 'asd)
 ;; Should be able to eval-and-replace anywhere.
 (global-set-key (kbd "C-c e") 'eval-and-replace)
 

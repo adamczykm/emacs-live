@@ -17,6 +17,9 @@
 (live-add-pack-lib "pkg-info")
 (require 'pkg-info)
 
+(live-add-pack-lib "f")
+(require 'f)
+
 (live-load-config-file "backup-dir-conf.el")
 (live-load-config-file "util-fns.el")
 (live-load-config-file "built-in.el")
