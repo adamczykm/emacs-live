@@ -161,3 +161,24 @@
 [submodule "packs/dev/foundation-pack/vendor/submodules/f.el"]
 	path = packs/dev/foundation-pack/vendor/submodules/f.el
 	url = https://github.com/rejeep/f.el
+[submodule "packs/dev/helm-pack/vendor/submodules/helm"]
+	path = packs/dev/helm-pack/vendor/submodules/helm
+	url = https://github.com/emacs-helm/helm
+[submodule "packs/dev/helm-pack/vendor/submodules/emacs-async"]
+	path = packs/dev/helm-pack/vendor/submodules/emacs-async
+	url = https://github.com/jwiegley/emacs-async
+[submodule "packs/dev/helm-pack/vendor/submodules/emacs-helm-ag"]
+	path = packs/dev/helm-pack/vendor/submodules/emacs-helm-ag
+	url = https://github.com/syohex/emacs-helm-ag
+[submodule "packs/dev/helm-pack/vendor/submodules/helm-swoop"]
+	path = packs/dev/helm-pack/vendor/submodules/helm-swoop
+	url = https://github.com/ShingoFukuyama/helm-swoop
+[submodule "packs/dev/helm-pack/vendor/submodules/helm-flycheck"]
+	path = packs/dev/helm-pack/vendor/submodules/helm-flycheck
+	url = https://github.com/yasuyk/helm-flycheck
+[submodule "packs/dev/helm-pack/vendor/submodules/helm-clojure"]
+	path = packs/dev/helm-pack/vendor/submodules/helm-clojure
+	url = https://github.com/prepor/helm-clojure
+[submodule "packs/dev/helm-pack/vendor/submodules/helm-spotify"]
+	path = packs/dev/helm-pack/vendor/submodules/helm-spotify
+	url = https://github.com/krisajenkins/helm-spotify

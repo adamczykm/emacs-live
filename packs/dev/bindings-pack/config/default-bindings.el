@@ -158,7 +158,7 @@
 ;;redefine help shortcut
 (global-set-key (kbd "M-h") 'help-command)
 (define-key org-mode-map (kbd "M-h") 'help-command)
-
+22
 ;;allow the deletion of words:
 ;;backward kill word (forward kill word is M-d)
 (global-set-key (kbd "C-\\") 'backward-kill-word)

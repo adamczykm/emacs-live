@@ -158,6 +158,7 @@
                      "colour-pack"
                      "lang-pack"
                      "power-pack"
+                     "helm-pack"
                      "git-pack"
                      "org-pack"
                      "clojure-pack"

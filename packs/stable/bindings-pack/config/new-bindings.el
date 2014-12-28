@@ -7,7 +7,6 @@
 (key-chord-mode 1)
 
 
-
 ;; !!!!!! Controversy alert !!!!!!!!! ----------
 
 (global-set-key (kbd "C-SPC") 'execute-extended-command)
@@ -44,6 +43,41 @@
 (global-unset-key (kbd "C-x c"))
 
 
+;; helm
+(global-set-key (kbd "C-x C-b") 'helm-mini)
+(global-set-key (kbd "C-x b") 'helm-mini)
+(global-set-key (kbd "C-SPC") 'helm-M-x)
+(global-set-key (kbd "C-x C-f") 'helm-find-files)
+
+
+(global-set-key (kbd "C-c C-b") 'helm-bookmarks)
+;;(define-key w3m-mode-map  (kbd "C-c C-b") 'helm-bookmarks)
+(global-set-key (kbd "M-y") 'helm-show-kill-ring)
+(global-set-key (kbd "C-x C-f") 'helm-find-files)
+
+
+(global-set-key (kbd "C-h f") 'helm-apropos)
+(global-set-key (kbd "C-h r") 'helm-info-emacs)
+
+
+;; helm swoop
+
+(global-set-key (kbd "M-i") 'helm-swoop)
+(global-set-key (kbd "M-I") 'helm-swoop-back-to-last-point)
+
+(define-key helm-swoop-edit-map (kbd "C-c C-c") 'helm-swoop--edit-complete)
+(define-key helm-swoop-edit-map (kbd "C-c C-k") 'helm-swoop--edit-cancel)
+(define-key helm-multi-swoop-edit-map (kbd "C-c C-c") 'helm-multi-swoop--edit-complete)
+(define-key helm-multi-swoop-edit-map (kbd "C-c C-k") 'helm-swoop--edit-cancel)
+(define-key flycheck-mode-map (kbd "C-c ! h") 'helm-flycheck)
+
+(global-set-key (kbd "<C-tab>") 'tab-to-tab-stop)
+(define-key isearch-mode-map (kbd "M-s s") 'helm-swoop-from-isearch)
+
+;; helm ag
+(define-key projectile-mode-map (kbd "M-o") 'projectile-helm-ag)
+(define-key projectile-mode-map (kbd "M-O") 'helm-ag-pop-stack)
+(define-key projectile-mode-map (kbd "C-M-o") 'helm-ag)
 
 
 ;; ----------  TEXT MVMT & SELECTION  -----------
@@ -58,4 +92,38 @@
 (global-set-key (kbd "M-@") 'er/expand-region)
 
 
+;; --------------- TEXT FORMATTING ------------------
+
+(global-set-key (kbd "M-/") 'comment-or-uncomment-region)
+
 ;; ---------------- PYTHON PACK -----------------
+
+
+
+;; --------------- FUNKY CHARACTERS -------------
+
+;;funky characters
+(global-set-key (kbd "C-c i a") (lambda () (interactive) (insert "𝝰")))
+(global-set-key (kbd "C-c i A") (lambda () (interactive) (insert "𝝖")))
+(global-set-key (kbd "C-c i b") (lambda () (interactive) (insert "𝝱")))
+(global-set-key (kbd "C-c i B") (lambda () (interactive) (insert "𝝗")))
+(global-set-key (kbd "C-c i d") (lambda () (interactive) (insert "𝝳")))
+(global-set-key (kbd "C-c i D") (lambda () (interactive) (insert "𝝙")))
+(global-set-key (kbd "C-c i g") (lambda () (interactive) (insert "𝝲")))
+(global-set-key (kbd "C-c i G") (lambda () (interactive) (insert "𝞒")))
+(global-set-key (kbd "C-c i l") (lambda () (interactive) (insert "λ")))
+(global-set-key (kbd "C-c i L") (lambda () (interactive) (insert "Λ")))
+(global-set-key (kbd "C-c i N") (lambda () (interactive) (insert "ℕ")))
+(global-set-key (kbd "C-c i R") (lambda () (interactive) (insert "ℝ")))
+(global-set-key (kbd "C-c i i") (lambda () (interactive) (insert "∞")))
+(global-set-key (kbd "C-c i .") (lambda () (interactive) (insert "×")))
+(global-set-key (kbd "C-c i 0") (lambda () (interactive) (insert "∅")))
+(global-set-key (kbd "C-c i u") (lambda () (interactive) (insert "∪")))
+(global-set-key (kbd "C-c i s") (lambda () (interactive) (insert "♯")))
+(global-set-key (kbd "C-c i f") (lambda () (interactive) (insert "♭")))
+(global-set-key (kbd "C-c i p") (lambda () (interactive) (insert "£")))
+
+
+;; ----------------- MAGIT ----------------------------
+
+(define-key global-map (kbd "C-M-g") 'magit-status)
