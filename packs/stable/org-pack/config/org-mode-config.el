@@ -31,3 +31,9 @@
                        (eval modes))))
 
 (require 'org)
+
+(setq org-directory "/home/anks/Projects/literal/org")
+(setq org-default-notes-file (concat org-directory "/capture.org"))
+
+;; it is a new variable for my use
+(setq org-main-file (concat org-directory "/main.org"))

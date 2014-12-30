@@ -1,13 +1,17 @@
 ;; My keybindings.
 ;; Beware: M-x is swapped with C-SPC
 
-;; CONFIGURATIONS:
+;;* ---------    CONFIGURATIONS         ---------------
 
 (require 'key-chord)
 (key-chord-mode 1)
 
 
-;; !!!!!! Controversy alert !!!!!!!!! ----------
+;;* ---------    UNDEFS                 ---------------
+
+(global-unset-key (kbd "C-<RET>"))
+
+;;* !!!!!!       CONTROVERSY ALERT      ---------------
 
 (global-set-key (kbd "C-SPC") 'execute-extended-command)
 (global-set-key (kbd "M-x") 'set-mark-command)
@@ -20,8 +24,7 @@
 
 
 
-;; ------------ BUFFERS & FRAMES ----------------
-
+;;* ---------    BUFFERS & FRAMES       ---------------
 
 ;; switching between 2 top buffers
 (defun switch-to-previous-buffer ()
@@ -34,7 +37,7 @@
 (define-key global-map (kbd "C-+") 'text-scale-increase)
 (define-key global-map (kbd "C--") 'text-scale-decrease)
 
-;; ------------      HELM     -------------------
+;;* ---------    HELM                   ---------------
 
 ;; The default "C-x c" is quite close to "C-x C-c", which quits Emacs.
 ;; Changed to "C-c h". Note: We must set "C-c h" globally, because we
@@ -64,6 +67,7 @@
 
 (global-set-key (kbd "M-i") 'helm-swoop)
 (global-set-key (kbd "M-I") 'helm-swoop-back-to-last-point)
+(define-key isearch-mode-map (kbd "M-s s") 'helm-swoop-from-isearch)
 
 (define-key helm-swoop-edit-map (kbd "C-c C-c") 'helm-swoop--edit-complete)
 (define-key helm-swoop-edit-map (kbd "C-c C-k") 'helm-swoop--edit-cancel)
@@ -80,7 +84,7 @@
 (define-key projectile-mode-map (kbd "C-M-o") 'helm-ag)
 
 
-;; ----------  TEXT MVMT & SELECTION  -----------
+;;* ---------    TEXT MVMT & SELECTION  ---------------
 
 
 ;; -- Ace jump
@@ -92,15 +96,20 @@
 (global-set-key (kbd "M-@") 'er/expand-region)
 
 
-;; --------------- TEXT FORMATTING ------------------
+;;* ---------    TEXT FORMATTING        ---------------
 
 (global-set-key (kbd "M-/") 'comment-or-uncomment-region)
 
-;; ---------------- PYTHON PACK -----------------
+;;* ---------    PAREDIT                ---------------
+
+(define-key paredit-mode-map (kbd "C-S-<right>") 'paredit-backward-barf-sexp)
+(define-key paredit-mode-map (kbd "C-S-<left>") 'paredit-backward-slurp-sexp)
+
+;;* ---------    PYTHON PACK            ---------------
 
 
 
-;; --------------- FUNKY CHARACTERS -------------
+;;* ---------    FUNKY CHARACTERS       ---------------
 
 ;;funky characters
 (global-set-key (kbd "C-c i a") (lambda () (interactive) (insert "𝝰")))
@@ -124,6 +133,15 @@
 (global-set-key (kbd "C-c i p") (lambda () (interactive) (insert "£")))
 
 
-;; ----------------- MAGIT ----------------------------
+;;* ---------    MAGIT                  ---------------
 
 (define-key global-map (kbd "C-M-g") 'magit-status)
+
+;;* ---------    ORGMODE                ---------------
+
+(define-key org-mode-map (kbd "C-c C-b") nil)
+(global-set-key (kbd "C-c o c") 'org-capture)
+(global-set-key (kbd "C-c o a") 'org-agenda)
+(global-set-key (kbd "C-c o o") (lambda() (interactive)(find-file org-main-file)))
+
+(define-key org-mode-map (kbd "C-<RET>") 'org-insert-heading-respect-content)

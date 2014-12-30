@@ -231,7 +231,8 @@
 ;; ------------------------ CUSTOMS
 
 (setq sentence-end-double-space 'nil)
-(put 'upcase-region 'disabled nil)
 
 (add-to-list 'default-frame-alist
                        '(font . "DejaVu Sans Mono-9"))
+
+(put 'upcase-region 'disabled nil)
