@@ -22,11 +22,12 @@
 (defun yas/org-very-safe-expand ()
               (let ((yas/fallback-behavior 'return-nil)) (yas/expand)))
 
-(add-hook 'org-mode-hook
-          (lambda ()
-            (make-variable-buffer-local 'yas/trigger-key)
-            (setq yas/trigger-key [tab])
-            (add-to-list 'org-tab-first-hook 'yas/org-very-safe-expand)
-            (define-key yas/keymap [tab] 'yas/next-field)))
+;;* Macro for easy adding orgstruct++ mode to major modes
+(defmacro add-orgstruct-modes (modes)
+  (cons 'progn (mapcar #'(lambda (p)
+                           `(add-hook (car ,p) (lambda ()
+                                                 (turn-on-orgstruct++)
+                                                 (setq orgstruct-heading-prefix-regexp (cdr ,p)))))
+                       (eval modes))))
 
 (require 'org)
