@@ -142,6 +142,7 @@
 (define-key org-mode-map (kbd "C-c C-b") nil)
 (global-set-key (kbd "C-c o c") 'org-capture)
 (global-set-key (kbd "C-c o a") 'org-agenda)
+(global-set-key (kbd "C-c o l") 'org-agenda-list)
 (global-set-key (kbd "C-c o o") (lambda() (interactive)(find-file org-main-file)))
 
 (define-key org-mode-map (kbd "C-<RET>") 'org-insert-heading-respect-content)
