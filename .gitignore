@@ -26,3 +26,4 @@ tmp/*
 swank/*
 /projectile-bookmarks.eld
 /projectile.cache
+/etc/custom/custom-configuration.el
