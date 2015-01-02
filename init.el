@@ -162,6 +162,7 @@
                      "git-pack"
                      "org-pack"
                      "clojure-pack"
+                     "haskell-pack"
                      "bindings-pack"))
        (live-dir (file-name-as-directory "stable"))
        (dev-dir  (file-name-as-directory "dev")))
@@ -236,3 +237,6 @@
                        '(font . "DejaVu Sans Mono-9"))
 
 (put 'upcase-region 'disabled nil)
+
+;; shell command in emacs
+(setenv "PATH" (shell-command-to-string "echo $PATH"))

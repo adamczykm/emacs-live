@@ -41,6 +41,6 @@
 ;;* Capture
 (setq org-capture-templates
       '(("t" "Todo" entry (file+headline org-main-file "Tasks")
-         "* TODO %?\n  SCHEDULED: %T\n  %a\n\n   %i\n\n\n")
+         "* TODO %?\n  SCHEDULED: %T\n  %a\n\n   %c\n\n")
         ("j" "Journal" entry (file+datetree "~/org/journal.org")
          "* %?\nEntered on %U\n  %i\n  %a")))

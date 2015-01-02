@@ -100,10 +100,22 @@
 
 (global-set-key (kbd "M-/") 'comment-or-uncomment-region)
 
+;;** ------------    ALIGNMENT          ---------------
+
+(global-set-key (kbd "C-x a a") 'align)
+(global-set-key (kbd "C-x a r") 'align-regexp)
+
 ;;* ---------    PAREDIT                ---------------
 
 (define-key paredit-mode-map (kbd "C-S-<right>") 'paredit-backward-barf-sexp)
 (define-key paredit-mode-map (kbd "C-S-<left>") 'paredit-backward-slurp-sexp)
+
+;;* ---------    HASKELL PACK           ---------------
+
+(define-key haskell-mode-map (kbd "C-c b") nil)
+
+;;** Structured Haskell Mode
+
 
 ;;* ---------    PYTHON PACK            ---------------
 
@@ -142,6 +154,9 @@
 (define-key org-mode-map (kbd "C-c C-b") nil)
 (global-set-key (kbd "C-c o c") 'org-capture)
 (global-set-key (kbd "C-c o a") 'org-agenda)
+(global-set-key (kbd "C-c o l") 'org-agenda-list)
+(global-set-key (kbd "C-c o d") 'org-decrypt-entry)
 (global-set-key (kbd "C-c o o") (lambda() (interactive)(find-file org-main-file)))
+
 
 (define-key org-mode-map (kbd "C-<RET>") 'org-insert-heading-respect-content)
