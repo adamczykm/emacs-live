@@ -128,7 +128,12 @@
 
 ;;* ---------    PYTHON PACK            ---------------
 
-
+(define-key python-mode-map (kbd "C-c C-l") 'py-execute-line-ipython)
+(define-key python-mode-map (kbd "C-c C-d") 'jedi:show-doc)
+(define-key python-mode-map (kbd "<f5>") 'py-execute-buffer-ipython)
+(define-key python-mode-map (kbd "C-<f5>") 'py-execute-buffer-ipython-dedicated)
+(define-key python-mode-map (kbd "<f9>") 'py-execute-region-ipython)
+(define-key python-mode-map (kbd "C-<f9>") 'py-execute-region-ipython-dedicated)
 
 ;;* ---------    FUNKY CHARACTERS       ---------------
 
