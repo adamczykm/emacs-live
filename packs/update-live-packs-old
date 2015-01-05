@@ -12,3 +12,4 @@ cp -pRL ~/.emacs.d/packs/dev/* ~/.emacs.d/packs/stable/
 echo "removing dev detritus"
 rm -rf ~/.emacs.d/packs/stable/**/vendor
 rm -rf ~/.emacs.d/packs/stable/**/.git*
+rm -rf ~/.emacs.d/packs/stable/**/*.elc
