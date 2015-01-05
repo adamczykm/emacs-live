@@ -4,4 +4,4 @@
 (add-hook 'haskell-mode-hook 'structured-haskell-mode)
 
 (require 'f)
-(setq shm-program-name (concat (expand-file-name "~/.emacs.d/packs/stable/haskell-pack") "/lib/structured-haskell-mode"))
+(setq shm-program-name "~/.cabal/bin/structured-haskell-mode")
