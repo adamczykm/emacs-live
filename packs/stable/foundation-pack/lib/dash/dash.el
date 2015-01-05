@@ -901,8 +901,8 @@ of cons cells. Otherwise, return the groupings as a list of lists. "
       (setq lists (mapcar 'cdr lists)))
     (setq results (nreverse results))
     (if (= (length lists) 2)
-        ; to support backward compatability, return
-        ; a cons cell if two lists were provided
+        ;; to support backward compatability, return
+        ;; a cons cell if two lists were provided
         (--map (cons (car it) (cadr it)) results)
       results)))
 
@@ -969,7 +969,7 @@ See also: `-table-flat'"
     (while (car last-list)
       (let ((item (apply fn (-map 'car lists))))
         (push item (car re))
-        (pop (car lists))
+        (setcar lists (cdar lists)) ;; silence byte compiler
         (dash--table-carry lists restore-lists re)))
     (nreverse (car (last re)))))
 
@@ -1090,10 +1090,6 @@ in second form, etc."
         (list form x))
     `(--> (--> ,x ,form) ,@more)))
 
-(put '-> 'lisp-indent-function 1)
-(put '->> 'lisp-indent-function 1)
-(put '--> 'lisp-indent-function 1)
-
 (defun -grade-up (comparator list)
   "Grade elements of LIST using COMPARATOR relation, yielding a
 permutation vector such that applying this permutation to LIST
@@ -1101,8 +1097,8 @@ sorts it in ascending order."
   ;; ugly hack to "fix" lack of lexical scope
   (let ((comp `(lambda (it other) (funcall ',comparator (car it) (car other)))))
     (->> (--map-indexed (cons it it-index) list)
-      (-sort comp)
-      (-map 'cdr))))
+         (-sort comp)
+         (-map 'cdr))))
 
 (defun -grade-down (comparator list)
   "Grade elements of LIST using COMPARATOR relation, yielding a
@@ -1111,8 +1107,8 @@ sorts it in descending order."
   ;; ugly hack to "fix" lack of lexical scope
   (let ((comp `(lambda (it other) (funcall ',comparator (car other) (car it)))))
     (->> (--map-indexed (cons it it-index) list)
-      (-sort comp)
-      (-map 'cdr))))
+         (-sort comp)
+         (-map 'cdr))))
 
 (defun dash--match-ignore-place-p (symbol)
   "Return non-nil if SYMBOL is a symbol and starts with _."
@@ -1126,8 +1122,8 @@ sorts it in descending order."
     `(pop ,source))
    (t
     `(progn
-       (setq ,s (nthcdr ,skip-cdr ,s))
-       (pop ,s)))))
+       (setq ,source (nthcdr ,skip-cdr ,source))
+       (pop ,source)))))
 
 (defun dash--match-cons-get-car (skip-cdr source)
   "Helper function generating idiomatic code to get nth car."
@@ -1496,23 +1492,24 @@ See `-let' for the description of destructuring mechanism."
 VARS and do THEN, otherwise do ELSE. VARS-VALS should be a list
 of (VAR VAL) pairs.
 
-Note: binding is done according to `-let'."
-  (declare (debug ((&rest (symbolp form)) form body))
+Note: binding is done according to `-let*'."
+  (declare (debug ((&rest (sexp form)) form body))
            (indent 2))
   (->> vars-vals
-    (-mapcat (-lambda ((pat src)) (dash--match pat src)))
-    (-reduce-r-from
-     (-lambda ((var val) memo)
-       `(let ((,var ,val))
-          (if ,var ,memo ,@else)))
-     then)))
+       (--mapcat (dash--match (car it) (cadr it)))
+       (--reduce-r-from
+        (let ((var (car it))
+              (val (cadr it)))
+          `(let ((,var ,val))
+             (if ,var ,acc ,@else)))
+        then)))
 
 (defmacro -if-let (var-val then &rest else)
   "If VAL evaluates to non-nil, bind it to VAR and do THEN,
 otherwise do ELSE. VAR-VAL should be a (VAR VAL) pair.
 
 Note: binding is done according to `-let'."
-  (declare (debug ((symbolp form) form body))
+  (declare (debug ((sexp form) form body))
            (indent 2))
   `(-if-let* (,var-val) ,then ,@else))
 
@@ -1528,8 +1525,8 @@ otherwise do ELSE."
 VARS and execute body. VARS-VALS should be a list of (VAR VAL)
 pairs.
 
-Note: binding is done according to `-let'."
-  (declare (debug ((&rest (symbolp form)) body))
+Note: binding is done according to `-let*'."
+  (declare (debug ((&rest (sexp form)) body))
            (indent 1))
   `(-if-let* ,vars-vals (progn ,@body)))
 
@@ -1538,7 +1535,7 @@ Note: binding is done according to `-let'."
 VAR-VAL should be a (VAR VAL) pair.
 
 Note: binding is done according to `-let'."
-  (declare (debug ((symbolp form) body))
+  (declare (debug ((sexp form) body))
            (indent 1))
   `(-if-let ,var-val (progn ,@body)))
 

@@ -1,9 +1,9 @@
 PREFIX  ?= /usr/local
-datarootdir ?= /home/anks/.emacs.d/packs/dev/git-pack/vendor/submodules/magit
-lispdir ?= $(datarootdir)
+datarootdir ?= $(PREFIX)/share
+lispdir ?= $(datarootdir)/emacs/site-lisp/magit
 infodir ?= $(datarootdir)/info
 docdir  ?= $(datarootdir)/doc/magit
-execdir ?= $(datarootdir)/bin
+execdir ?= $(PREFIX)/bin
 
 LOADDEFS_FILE ?= magit-autoloads.el
 LOADDEFS_DIR  ?= $(lispdir)
