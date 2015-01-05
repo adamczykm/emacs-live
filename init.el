@@ -163,6 +163,7 @@
                      "org-pack"
                      "clojure-pack"
                      "haskell-pack"
+                     "python-pack"
                      "bindings-pack"))
        (live-dir (file-name-as-directory "stable"))
        (dev-dir  (file-name-as-directory "dev")))
