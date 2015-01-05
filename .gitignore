@@ -29,3 +29,4 @@ swank/*
 /etc/custom/custom-configuration.el
 /packs/stable/power-pack/lib/yasnippet/snippets/
 /packs/stable/power-pack/lib/yasnippet/yasmate/
+/packs/stable/haskell-pack/lib/structured-haskell-mode/elisp/=
