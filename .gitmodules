@@ -182,3 +182,21 @@
 [submodule "packs/dev/helm-pack/vendor/submodules/helm-spotify"]
 	path = packs/dev/helm-pack/vendor/submodules/helm-spotify
 	url = https://github.com/krisajenkins/helm-spotify
+[submodule "packs/dev/python-pack/vendor/submodules/python-mode"]
+	path = packs/dev/python-pack/vendor/submodules/python-mode
+	url = https://github.com/emacsmirror/python-mode
+[submodule "packs/dev/python-pack/vendor/submodules/emacs-ctable"]
+	path = packs/dev/python-pack/vendor/submodules/emacs-ctable
+	url = https://github.com/kiwanami/emacs-ctable
+[submodule "packs/dev/python-pack/vendor/submodules/emacs-epc"]
+	path = packs/dev/python-pack/vendor/submodules/emacs-epc
+	url = https://github.com/kiwanami/emacs-epc
+[submodule "packs/dev/python-pack/vendor/submodules/emacs-python-environment"]
+	path = packs/dev/python-pack/vendor/submodules/emacs-python-environment
+	url = https://github.com/tkf/emacs-python-environment
+[submodule "packs/dev/python-pack/vendor/submodules/emacs-jedi"]
+	path = packs/dev/python-pack/vendor/submodules/emacs-jedi
+	url = https://github.com/tkf/emacs-jedi
+[submodule "packs/dev/python-pack/vendor/submodules/emacs-deferred"]
+	path = packs/dev/python-pack/vendor/submodules/emacs-deferred
+	url = https://github.com/kiwanami/emacs-deferred
