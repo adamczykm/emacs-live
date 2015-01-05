@@ -1,6 +1,14 @@
 ;; My keybindings.
 ;; Beware: M-x is swapped with C-SPC
 
+;;* ---------    MY UTILS               ---------------
+
+(defun connect-serwer-intelc ()
+  (interactive)
+  (tramp "ssh://michal@176.119.40.101|sudo:176.119.40.101:/"))
+
+(global-set-key (kbd "C-c r") 'connect-serwer-intelc)
+
 ;;* ---------    CONFIGURATIONS         ---------------
 
 (require 'key-chord)
@@ -115,6 +123,7 @@
 (define-key haskell-mode-map (kbd "C-c b") nil)
 
 ;;** Structured Haskell Mode
+(define-key shm-map (kbd "M-j") 'shm/newline-indent)
 
 
 ;;* ---------    PYTHON PACK            ---------------
@@ -156,6 +165,7 @@
 (global-set-key (kbd "C-c o a") 'org-agenda)
 (global-set-key (kbd "C-c o l") 'org-agenda-list)
 (global-set-key (kbd "C-c o d") 'org-decrypt-entry)
+(global-set-key (kbd "C-c o t") 'org-todo-list)
 (global-set-key (kbd "C-c o o") (lambda() (interactive)(find-file org-main-file)))
 
 
