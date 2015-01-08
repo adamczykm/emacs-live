@@ -35,6 +35,21 @@
 
 
 ;;* ---------    BUFFERS & FRAMES       ---------------
+;;window and buffer movement
+(global-set-key (kbd "C-c w b") 'winner-undo)
+(global-set-key (kbd "C-c w f") 'winner-redo)
+(global-set-key (kbd "C-c w s") 'swap-windows)
+(global-set-key (kbd "C-c w r") 'rotate-windows)
+(global-set-key (kbd "C-c w u") 'buf-move-up)
+(global-set-key (kbd "C-c w d") 'buf-move-down)
+(global-set-key (kbd "C-c w l") 'buf-move-left)
+(global-set-key (kbd "C-c w r") 'buf-move-right)
+(global-set-key (kbd "C-c w .") 'shrink-window-horizontally)
+(global-set-key (kbd "C-c w ,") 'enlarge-window-horizontally)
+(global-set-key (kbd "C-c w /") (lambda () (interactive) (enlarge-window -1)))
+(global-set-key (kbd "C-c w '") (lambda () (interactive) (enlarge-window 1)))
+
+
 
 ;; switching between 2 top buffers
 (defun switch-to-previous-buffer ()
