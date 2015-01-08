@@ -123,6 +123,11 @@
 ;;* ---------    HASKELL PACK           ---------------
 
 (define-key haskell-mode-map (kbd "C-c b") nil)
+(define-key haskell-mode-map (kbd "C-c C-b") nil)
+
+(define-key haskell-mode-map (kbd "C-c .") 'find-tag)
+(define-key haskell-mode-map (kbd "C-c ,") 'pop-tag-mark)
+
 
 (eval-after-load 'haskell-mode '(progn
   (define-key haskell-mode-map (kbd "C-c C-l") 'haskell-process-load-or-reload)
