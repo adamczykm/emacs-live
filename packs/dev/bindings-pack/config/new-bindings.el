@@ -160,7 +160,8 @@
   (define-key haskell-cabal-mode-map (kbd "C-c c") 'haskell-process-cabal)))
 
 ;;** Structured Haskell Mode
-(define-key shm-map (kbd "M-j") 'shm/newline-indent)
+(eval-after-load 'structured-haskell-mode
+  '(define-key shm-map (kbd "M-j") 'shm/newline-indent))
 
 
 ;;* ---------    PYTHON PACK            ---------------
