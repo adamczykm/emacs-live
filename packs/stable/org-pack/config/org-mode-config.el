@@ -32,7 +32,7 @@
 
 (require 'org)
 
-(setq org-directory "/home/anks/Projects/literal/org")
+(setq org-directory "/home/michal/Projects/literal/org")
 (setq org-default-notes-file (concat org-directory "/capture.org"))
 
 ;; it is a new variable for my use
