@@ -36,6 +36,7 @@
 
 ;;* ---------    BUFFERS & FRAMES       ---------------
 ;;window and buffer movement
+(global-set-key (kbd "C-x o") 'other-frame)
 (global-set-key (kbd "C-c w b") 'winner-undo)
 (global-set-key (kbd "C-c w f") 'winner-redo)
 (global-set-key (kbd "C-c w s") 'swap-windows)
