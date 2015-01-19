@@ -161,7 +161,9 @@
 
 ;;** Structured Haskell Mode
 (eval-after-load 'structured-haskell-mode
-  '(define-key shm-map (kbd "M-j") 'shm/newline-indent))
+  '(progn
+     (define-key shm-map (kbd "M-j") 'shm/newline-indent)
+     (define-key shm-map (kbd "M-D") 'shm/backward-kill-word)))
 
 
 ;;* ---------    PYTHON PACK            ---------------
