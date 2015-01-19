@@ -200,3 +200,9 @@
 [submodule "packs/dev/python-pack/vendor/submodules/emacs-deferred"]
 	path = packs/dev/python-pack/vendor/submodules/emacs-deferred
 	url = https://github.com/kiwanami/emacs-deferred
+[submodule "packs/dev/haskell-pack/vendor/submodules/haskell-mode"]
+	path = packs/dev/haskell-pack/vendor/submodules/haskell-mode
+	url = git://github.com/haskell/haskell-mode.git
+[submodule "packs/dev/haskell-pack/vendor/submodules/structured-haskell-mode"]
+	path = packs/dev/haskell-pack/vendor/submodules/structured-haskell-mode
+	url = https://github.com/chrisdone/structured-haskell-mode
