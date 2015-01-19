@@ -12,16 +12,15 @@ import Prelude
 catchIO :: IO a -> (Exception.IOException -> IO a) -> IO a
 catchIO = Exception.catch
 
-
 version :: Version
-version = Version {versionBranch = [1,0,4], versionTags = []}
+version = Version [1,0,4] []
 bindir, libdir, datadir, libexecdir, sysconfdir :: FilePath
 
-bindir     = "/home/anks/.cabal/bin"
-libdir     = "/home/anks/.cabal/lib/i386-linux-ghc-7.8.3/structured-haskell-mode-1.0.4"
-datadir    = "/home/anks/.cabal/share/i386-linux-ghc-7.8.3/structured-haskell-mode-1.0.4"
-libexecdir = "/home/anks/.cabal/libexec"
-sysconfdir = "/home/anks/.cabal/etc"
+bindir     = "/home/michal/.cabal/bin"
+libdir     = "/home/michal/.cabal/lib/x86_64-linux-ghc-7.8.4/structured-haskell-mode-1.0.4"
+datadir    = "/home/michal/.cabal/share/x86_64-linux-ghc-7.8.4/structured-haskell-mode-1.0.4"
+libexecdir = "/home/michal/.cabal/libexec"
+sysconfdir = "/home/michal/.cabal/etc"
 
 getBinDir, getLibDir, getDataDir, getLibexecDir, getSysconfDir :: IO FilePath
 getBinDir = catchIO (getEnv "structured_haskell_mode_bindir") (\_ -> return bindir)
