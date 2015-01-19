@@ -1,7 +1,7 @@
 This is haskell-mode.info, produced by makeinfo version 5.2 from
 haskell-mode.tmp.texi.
 
-This manual is for Haskell mode, version 13.10-309-g0db5efa
+This manual is for Haskell mode, version
 
    Copyright © 2013 Haskell Mode contributors.
 
@@ -32,10 +32,10 @@ interpreter (e.g.  GHCi).
 * Getting Help and Reporting Bugs::
 * Getting Started::
 * Editing Haskell Code::
-* Unicode::
+* Unicode support::
 * Indentation::
-* Compilation::
 * haskell-decl-scan-mode::
+* Compilation::
 * inferior-haskell-mode::
 * haskell-interactive-mode::
 * haskell-cabal-mode::
@@ -117,7 +117,7 @@ match your preferences; *Note Indentation::, for more details about the
 indentation modes included with Haskell Mode.
 
 
-File: haskell-mode.info,  Node: Editing Haskell Code,  Next: Unicode,  Prev: Getting Started,  Up: Top
+File: haskell-mode.info,  Node: Editing Haskell Code,  Next: Unicode support,  Prev: Getting Started,  Up: Top
 
 4 Editing Haskell Code
 **********************
@@ -173,7 +173,7 @@ mode which should be enabled by default in current Emacsen.  *Note
 (emacs)Choosing Modes::
 
 
-File: haskell-mode.info,  Node: Unicode,  Next: Indentation,  Prev: Editing Haskell Code,  Up: Top
+File: haskell-mode.info,  Node: Unicode support,  Next: Indentation,  Prev: Editing Haskell Code,  Up: Top
 
 5 Unicode support
 *****************
@@ -210,7 +210,7 @@ can turn it off by setting ‘input-method-highlight-flag’ to ‘nil’ via
 ‘M-x customize-variable’.
 
 
-File: haskell-mode.info,  Node: Indentation,  Next: haskell-decl-scan-mode,  Prev: Unicode,  Up: Top
+File: haskell-mode.info,  Node: Indentation,  Next: haskell-decl-scan-mode,  Prev: Unicode support,  Up: Top
 
 6 Indentation
 *************
@@ -524,7 +524,7 @@ Concept index
 * literate programming:                  Editing Haskell Code. (line 27)
 * off-side rule:                         Indentation.          (line  6)
 * rectangle:                             Indentation.          (line 76)
-* Unicode:                               Unicode.              (line  6)
+* Unicode:                               Unicode support.      (line  6)
 
 
 File: haskell-mode.info,  Node: Function index,  Next: Variable index,  Prev: Concept index,  Up: Top
@@ -593,25 +593,25 @@ Variable index
 
 
 Tag Table:
-Node: Top692
-Node: Introduction1332
-Node: Getting Help and Reporting Bugs1849
-Node: Getting Started3311
-Node: Editing Haskell Code4522
-Ref: Editing Haskell Code-Footnote-16454
-Ref: Editing Haskell Code-Footnote-26545
-Ref: Editing Haskell Code-Footnote-36604
-Node: Unicode6688
-Node: Indentation8370
-Ref: Indentation-Footnote-112279
-Node: haskell-decl-scan-mode12464
-Node: Compilation14619
-Node: inferior-haskell-mode17384
-Node: haskell-interactive-mode18306
-Node: haskell-cabal-mode20169
-Node: Concept index21057
-Node: Function index21805
-Node: Variable index24275
+Node: Top673
+Node: Introduction1321
+Node: Getting Help and Reporting Bugs1838
+Node: Getting Started3300
+Node: Editing Haskell Code4511
+Ref: Editing Haskell Code-Footnote-16451
+Ref: Editing Haskell Code-Footnote-26542
+Ref: Editing Haskell Code-Footnote-36601
+Node: Unicode support6685
+Node: Indentation8375
+Ref: Indentation-Footnote-112292
+Node: haskell-decl-scan-mode12477
+Node: Compilation14632
+Node: inferior-haskell-mode17397
+Node: haskell-interactive-mode18319
+Node: haskell-cabal-mode20182
+Node: Concept index21070
+Node: Function index21818
+Node: Variable index24288
 
 End Tag Table
 

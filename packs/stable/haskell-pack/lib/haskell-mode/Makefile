@@ -9,6 +9,7 @@ SUBST_ATAT = sed -e 's/@@GIT_VERSION@@/$(GIT_VERSION)/g;s/@GIT_VERSION@/$(GIT_VE
 
 ELFILES = \
 	ghc-core.el \
+	ghci-script-mode.el \
 	highlight-uses-mode.el \
 	haskell-align-imports.el \
 	haskell-bot.el \
@@ -94,6 +95,16 @@ dir: haskell-mode.info
 	$(INSTALL_INFO) --dir=$@ $<
 
 haskell-mode.tmp.texi: haskell-mode.texi
+	@sed -n -e '/@chapter/ s/@code{\(.*\)}/\1/' \
+                -e 's/@chapter \(.*\)$$/* \1::/p' \
+                -e 's/@unnumbered \(.*\)$$/* \1::/p' \
+               haskell-mode.texi > haskell-mode-menu-order.txt
+	@sed -e '1,/@menu/ d' \
+            -e '/end menu/,$$ d' \
+            haskell-mode.texi > haskell-mode-content-order.txt
+	diff -C 1 haskell-mode-menu-order.txt haskell-mode-content-order.txt
+	@rm haskell-mode-menu-order.txt haskell-mode-content-order.txt
+
 	$(SUBST_ATAT) < haskell-mode.texi > haskell-mode.tmp.texi
 
 haskell-mode.info: haskell-mode.tmp.texi

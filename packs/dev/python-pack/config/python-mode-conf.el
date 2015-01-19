@@ -1,4 +1,5 @@
 (live-add-pack-lib "python-mode")
+(setq py-install-directory (concat default-directory "../lib/python-mode"))
 (require 'python-mode)
 (when (featurep 'python) (unload-feature 'python t))
 

@@ -163,17 +163,20 @@
 (eval-after-load 'structured-haskell-mode
   '(progn
      (define-key shm-map (kbd "M-j") 'shm/newline-indent)
+     (define-key shm-map (kbd "C-M-x") 'shm/mark-node)
      (define-key shm-map (kbd "M-D") 'shm/backward-kill-word)))
 
 
 ;;* ---------    PYTHON PACK            ---------------
 
-(define-key python-mode-map (kbd "C-c C-l") 'py-execute-line-ipython)
-(define-key python-mode-map (kbd "C-c C-d") 'jedi:show-doc)
-(define-key python-mode-map (kbd "<f5>") 'py-execute-buffer-ipython)
-(define-key python-mode-map (kbd "C-<f5>") 'py-execute-buffer-ipython-dedicated)
-(define-key python-mode-map (kbd "<f9>") 'py-execute-region-ipython)
-(define-key python-mode-map (kbd "C-<f9>") 'py-execute-region-ipython-dedicated)
+(eval-after-load 'python-mode
+  '(progn
+     (define-key python-mode-map (kbd "C-c C-l") 'py-execute-line-ipython)
+     (define-key python-mode-map (kbd "C-c C-d") 'jedi:show-doc)
+     (define-key python-mode-map (kbd "<f5>") 'py-execute-buffer-ipython)
+     (define-key python-mode-map (kbd "C-<f5>") 'py-execute-buffer-ipython-dedicated)
+     (define-key python-mode-map (kbd "<f9>") 'py-execute-region-ipython)
+     (define-key python-mode-map (kbd "C-<f9>") 'py-execute-region-ipython-dedicated)))
 
 ;;* ---------    FUNKY CHARACTERS       ---------------
 
