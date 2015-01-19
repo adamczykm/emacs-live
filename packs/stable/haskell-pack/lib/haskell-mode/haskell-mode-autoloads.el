@@ -920,8 +920,8 @@ Minor mode for enabling inf-haskell process interaction.
 ;;;;;;  "haskell-checkers.el" "haskell-collapse.el" "haskell-compat.el"
 ;;;;;;  "haskell-complete-module.el" "haskell-debug.el" "haskell-package.el"
 ;;;;;;  "haskell-presentation-mode.el" "haskell-process.el" "haskell-repl.el"
-;;;;;;  "haskell-str.el" "haskell-utils.el" "w3m-haddock.el") (21692
-;;;;;;  62754 626125 47000))
+;;;;;;  "haskell-str.el" "haskell-utils.el" "w3m-haddock.el") (21693
+;;;;;;  861 901383 384000))
 
 ;;;***
 

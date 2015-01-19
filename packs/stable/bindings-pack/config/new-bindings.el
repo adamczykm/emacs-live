@@ -163,6 +163,7 @@
 (eval-after-load 'structured-haskell-mode
   '(progn
      (define-key shm-map (kbd "M-j") 'shm/newline-indent)
+     (define-key shm-map (kbd "C-M-x") 'shm/mark-node)
      (define-key shm-map (kbd "M-D") 'shm/backward-kill-word)))
 
 
