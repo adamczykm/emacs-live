@@ -241,3 +241,4 @@
 
 ;; shell command in emacs
 (setenv "PATH" (shell-command-to-string "echo $PATH"))
+(put 'downcase-region 'disabled nil)

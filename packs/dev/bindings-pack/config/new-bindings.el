@@ -3,13 +3,14 @@
 
 ;;* ---------    MY UTILS               ---------------
 
-(defun connect-serwer-intelc ()
-  (interactive)
-  (tramp "ssh://michal@176.119.40.101|sudo:176.119.40.101:/"))
 
-(global-set-key (kbd "C-c r") 'connect-serwer-intelc)
+
+;; (global-set-key (kbd "C-c r") 'connect-serwer-intelc)
 
 (global-set-key (kbd "M-E") 'eshell)
+
+(global-set-key (kbd "M-W") (fset 'yank-word
+   (lambda (&optional arg) "Keyboard macro." (interactive "p") (kmacro-exec-ring-item (quote ("\370\346\367\342" 0 "%d")) arg))))
 
 ;;* ---------    CONFIGURATIONS         ---------------
 
@@ -19,7 +20,10 @@
 
 ;;* ---------    UNDEFS                 ---------------
 
+
 (define-key c++-mode-map (kbd "C-c C-b") nil)
+(global-unset-key (kbd "<f2>"))
+(global-unset-key (kbd "<f2>-<f2>"))
 (global-unset-key (kbd "C-<RET>"))
 
 ;;* !!!!!!       CONTROVERSY ALERT      ---------------
@@ -33,7 +37,12 @@
 
 
 
+;;* --------     "IDE"                  ---------------
+(global-set-key (kbd "<f2> s") 'helm-semantic-or-imenu)
+(global-set-key (kbd "<f2> f") 'helm-projectile-find-file)
 
+;; (global-set-key (kbd "M-n") '(lambda ()
+;;                                (search-forward-regexp orgstruct-heading-prefix-regexp)))
 
 ;;* ---------    BUFFERS & FRAMES       ---------------
 ;;window and buffer movement
@@ -66,7 +75,7 @@
 
 ;;* ---------    HELM                   ---------------
 
-(global-set-key (kbd "<f6>") 'helm-semantic-or-imenu)
+
 
 
 
