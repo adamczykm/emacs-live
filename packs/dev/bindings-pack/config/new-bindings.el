@@ -19,6 +19,7 @@
 
 ;;* ---------    UNDEFS                 ---------------
 
+(define-key c++-mode-map (kbd "C-c C-b") nil)
 (global-unset-key (kbd "C-<RET>"))
 
 ;;* !!!!!!       CONTROVERSY ALERT      ---------------
@@ -65,6 +66,10 @@
 
 ;;* ---------    HELM                   ---------------
 
+(global-set-key (kbd "<f6>") 'helm-semantic-or-imenu)
+
+
+
 ;; The default "C-x c" is quite close to "C-x C-c", which quits Emacs.
 ;; Changed to "C-c h". Note: We must set "C-c h" globally, because we
 ;; cannot change `helm-command-prefix-key' once `helm-config' is loaded.
@@ -72,7 +77,7 @@
 (global-unset-key (kbd "C-x c"))
 
 
-;; helm
+
 (global-set-key (kbd "C-x C-b") 'helm-mini)
 (global-set-key (kbd "C-x b") 'helm-mini)
 (global-set-key (kbd "C-SPC") 'helm-M-x)
